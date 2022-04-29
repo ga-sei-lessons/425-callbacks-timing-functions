@@ -82,28 +82,28 @@ TIMING FUNCTIONS
 
 // asyncrounous??? code 
 
-// setTimeout
-const justOnce = function() {
-  console.log('I only happen once')
-}
+// // setTimeout
+// const justOnce = function() {
+//   console.log('I only happen once')
+// }
 
-//setTimeout(callback, time in ms)
-// invokes the cb once after X ms have passed
-setTimeout(justOnce, 5000)
-setTimeout(function() {
-  console.log('i actually will happen first')
-}, 2500) // 2.5 seconds
+// //setTimeout(callback, time in ms)
+// // invokes the cb once after X ms have passed
+// setTimeout(justOnce, 5000)
+// setTimeout(function() {
+//   console.log('i actually will happen first')
+// }, 2500) // 2.5 seconds
 
-// setInterval
-const tick = function() {
-  console.log('tick')
-}
+// // setInterval
+// const tick = function() {
+//   console.log('tick')
+// }
 
-// setInterval(callback, frequency (interval) in ms)
-setInterval(tick, 1000) // no was to clear this tick without varibale assignment
-const tock = setInterval(function() {
-  console.log('tock') 
-}, 1001)
+// // setInterval(callback, frequency (interval) in ms)
+// setInterval(tick, 1000) // no was to clear this tick without varibale assignment
+// const tock = setInterval(function() {
+//   console.log('tock') 
+// }, 1001)
 
 // stop either interval -- needs varaible that has a interval assigned to it
 // setTimeout(function() {
@@ -111,4 +111,52 @@ const tock = setInterval(function() {
 //   console.log('clearing the tock interval!')
 //   clearInterval(tock)
 // }, 5000)
-setTimeout(clearInterval(tock), 5000)
+// setTimeout(function() { clearInterval(tock) }, 5000)
+
+// three ways to define functions
+
+// named function
+function name() {}
+
+// function express/anonymous function
+const myFunction = function() {}
+
+// Arrow function syntax (type of anon function/function express)
+const arrow = () => {}
+
+const add = function(num1, num2) {
+  return num1 + num2
+}
+
+// const arrowAdd = (num1, num2) => {
+//   return num1 + num2
+// }
+
+// implicit return arrow function
+// if you function is one line 
+// and you dont use curly bois
+// the value is automatically returned
+const arrowAdd = (num1, num2) => num1 + num2 
+
+console.log(arrowAdd(10, 5))
+
+// takes a number and returns the square (number times itself)
+// if there is exactly one param -- no paranthesis needed 
+const square = num => num * num
+
+console.log(square(10))
+
+// document.querySelector('#my-button').addEventListener(e => {
+//   e.target.value
+// })
+
+// arrow cannot be used as a constructor 
+// arrow functions cannot be used as a class in OOP javascript
+// arrow functions have a lexiacally bound 'this' -- they bind to the the 'this' around them
+
+// const myObj = {
+//   key: 'value'
+// }
+
+// var myArray = new Array(10)
+// console.log(myArray)
